@@ -272,7 +272,9 @@ h3 { font-size: clamp(1.12rem, 1.45vw, 1.32rem); font-weight: 800; }
     .mobile-nav a { display: grid; justify-items: center; align-content: center; gap: 3px; min-height: 58px; font-size: .68rem; font-weight: 700; color: #334155; }
     .mobile-nav a[aria-current] { color: #004abe; background: #edf3fe; }
     .mobile-nav a:focus-visible { outline-offset: -4px; }
-    .focus-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .focus-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+    .focus-list span { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 9px 4px; text-align: center; text-wrap: balance; }
+    .focus-list i { margin-right: 0; }
     .cta { flex-wrap: wrap; }
     .four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

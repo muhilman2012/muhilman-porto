@@ -2,8 +2,8 @@
 
 return [
     'url' => rtrim(env('PORTFOLIO_URL', 'https://muhilman.com'), '/'),
-    'image' => '/assets/portfolio-og-services.jpg',
-    'image_alt' => 'Muhammad Hilman, Web Developer dan Konsultan Teknis, dengan foto di lintasan lari.',
+    'image' => '/assets/share-terminal.png',
+    'image_alt' => 'Ikon terminal Muhammad Hilman.',
     'descriptions' => [
         'home' => 'Muhammad Hilman menyediakan jasa pembuatan dan pengembangan website, integrasi sistem, konsultasi teknis, serta penanganan kendala aplikasi dan server.',
         'services' => 'Diskusikan kebutuhan website baru, pengembangan fitur, integrasi layanan, perbaikan aplikasi, dan penyiapan server bersama Muhammad Hilman.',
