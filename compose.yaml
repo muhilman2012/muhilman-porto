@@ -1,0 +1,29 @@
+services:
+  web:
+    restart: unless-stopped
+    build: .
+    init: true
+    ports:
+      - "127.0.0.1:${PORTFOLIO_PORT:-8080}:8080"
+    environment:
+      APP_NAME: Muhammad Hilman
+      APP_ENV: production
+      APP_KEY: ${APP_KEY:?Run php artisan key:generate before starting Docker Compose}
+      APP_DEBUG: "false"
+      APP_URL: ${APP_URL:-http://localhost:8080}
+      PORTFOLIO_URL: ${PORTFOLIO_URL:-https://muhilman.com}
+      APP_LOCALE: id
+      APP_FALLBACK_LOCALE: en
+      SESSION_DRIVER: file
+      CACHE_STORE: file
+      QUEUE_CONNECTION: sync
+      LOG_CHANNEL: stderr
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "php", "-r", "exit(@file_get_contents('http://127.0.0.1:8080/up') === false ? 1 : 0);"]
+      interval: 15s
+      timeout: 3s
+      start_period: 5s
