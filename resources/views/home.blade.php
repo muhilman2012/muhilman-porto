@@ -4,7 +4,6 @@
 <section class="hero-band">
     <div class="shell hero">
         <div>
-            <p class="eyebrow">Muhammad Hilman · Web Developer</p>
             <h1>Pembuatan Website &amp; Konsultasi Teknis</h1>
             <p class="lead">Saya membantu membangun dan mengembangkan website, mengintegrasikan layanan, serta menelusuri kendala aplikasi dan server.</p>
             <div class="actions">
@@ -19,9 +18,7 @@
         </div>
         <div class="hero-visual">
             @include('runner', ['priority' => true, 'showCaption' => false])
-            <div class="terminal-scene hero-terminal">
-                @include('terminal')
-            </div>
+            @include('terminal')
         </div>
     </div>
 </section>
@@ -74,7 +71,6 @@
     <div class="profile home-profile">
         <figure class="home-profile-photo">
             <img src="{{ asset('assets/hilman.png') }}" width="460" height="460" alt="Foto Muhammad Hilman" loading="lazy" decoding="async">
-            <figcaption>Muhammad Hilman</figcaption>
         </figure>
         <div class="profile-content">
             <span class="kicker">Tentang saya</span>

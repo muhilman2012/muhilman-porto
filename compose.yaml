@@ -12,6 +12,8 @@ services:
       APP_DEBUG: "false"
       APP_URL: ${APP_URL:-http://localhost:8080}
       PORTFOLIO_URL: ${PORTFOLIO_URL:-https://muhilman.com}
+      GTM_CONTAINER_ID: ${GTM_CONTAINER_ID-GTM-TSLJ6L9X}
+      GA4_MEASUREMENT_ID: ${GA4_MEASUREMENT_ID:-}
       APP_LOCALE: id
       APP_FALLBACK_LOCALE: en
       SESSION_DRIVER: file

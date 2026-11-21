@@ -41,3 +41,11 @@ Image melayani direktori public/ saja, menolak dotfile, dan mengirim CSP serta h
 
 Canonical URL, Open Graph, dan sitemap memakai https://muhilman.com secara default.
 Jika domain publik berbeda, ubah PORTFOLIO_URL di .env, lalu buat ulang container.
+
+## Google Analytics dan Google Search
+
+Docker menggunakan container Google Tag Manager GTM-TSLJ6L9X secara default. Untuk menggantinya, isi GTM_CONTAINER_ID di .env. Setelah memperbarui source di VPS, jalankan `docker compose up -d --build --wait` dari direktori portofolio. Untuk mengukur kunjungan, publikasikan Google tag dengan Measurement ID properti GA4 di dalam container GTM dan periksa laporan Realtime setelah membuka situs.
+
+Jika menggunakan GA4 langsung, kosongkan GTM_CONTAINER_ID dan isi GA4_MEASUREMENT_ID. Saat GTM aktif, aplikasi hanya memuat container GTM. Mengosongkan kedua nilai menonaktifkan pelacakan. Setelah mengubah .env, jalankan kembali Docker Compose agar environment kontainer diperbarui. Jika Nginx juga mengirim CSP, periksa kesesuaiannya dengan CSP Apache.
+
+Untuk pemantauan indeks, tambahkan properti Domain muhilman.com di Google Search Console dan verifikasi menggunakan record TXT Cloudflare pada nama @. Kirim https://muhilman.com/sitemap.xml melalui menu Sitemaps. Gunakan Inspeksi URL pada beranda untuk memeriksa versi aktif dan meminta pengindeksan.

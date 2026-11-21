@@ -22,11 +22,21 @@
         </div>
     </div>
 </section>
-<section class="band shell">
+<section class="band shell" id="perjalanan-kerja">
     <header class="section-head"><h2>Perjalanan kerja</h2></header>
     <div class="timeline">
         <article class="card"><span class="tag">Programmer</span><h3>Sekretariat Wakil Presiden</h3><p>Mengembangkan dan merawat Lapor Mas Wapres serta menginisiasi modernisasi v2 setelah mengevaluasi tahun pertama operasional.</p></article>
+        <article class="card">
+            <span class="tag">Programmer</span>
+            <h3>Thunder Productions</h3>
+            <p>Mengembangkan situs perusahaan dan menjadi penghubung antara tim internal dan vendor.</p>
+        </article>
         <article class="card"><span class="tag">Freelance Web Developer</span><h3>PSP4</h3><p>Mengembangkan aplikasi web menggunakan Laravel.</p></article>
+        <article class="card">
+            <span class="tag">Programmer</span>
+            <h3>KOPITU</h3>
+            <p>Mengembangkan situs web KOPITU.</p>
+        </article>
     </div>
 </section>
 @include('cta')
