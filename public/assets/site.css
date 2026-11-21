@@ -299,6 +299,20 @@ h3 { font-size: clamp(1.12rem, 1.45vw, 1.32rem); font-weight: 800; }
     .topology li + li::before { content: "↓"; inset-inline-start: 50%; top: -17px; transform: translateX(-50%); }
 }
 
+.hero-stack-art { display: none; }
+@media (min-width: 901px) {
+    .hero-copy { position: relative; }
+    .hero-stack-art {
+        display: block;
+        position: absolute;
+        inset-inline-start: 0;
+        bottom: 100%;
+        width: 124%;
+        height: auto;
+        pointer-events: none;
+    }
+    .hero-stack-art image { opacity: .55; }
+}
 .hero > div h1 { max-width: 24ch; font-size: clamp(2.1rem, 3.5vw, 3.35rem); }
 .profile .runner { width: 100%; max-width: 392px; }
 .runner img { aspect-ratio: 5 / 6; }
@@ -405,16 +419,25 @@ h3 { font-size: clamp(1.12rem, 1.45vw, 1.32rem); font-weight: 800; }
 .tech-copy { display: none; }
 .tech-badge span { color: var(--ink); font-size: .76rem; font-weight: 700; text-align: center; }
 @media (prefers-reduced-motion: no-preference) {
-    .terminal-command { animation: bash-type .9s steps(13, end) .76s backwards; }
-    .terminal-result { animation: bash-output .1s step-end 1.66s backwards; }
-    .terminal-cursor { animation: bash-blink 1s step-end 1.76s 3; }
+    .hero-terminal { --bash-cycle: 8s; --bash-delay: .76s; }
+    .terminal-command { animation: bash-type var(--bash-cycle) linear var(--bash-delay) infinite backwards; }
+    .terminal-result { animation: bash-output var(--bash-cycle) linear var(--bash-delay) infinite backwards; }
+    .terminal-cursor { animation: bash-blink 1.2s step-end infinite; }
     .tech-window { overflow: hidden; }
     .tech-track { display: flex; width: max-content; animation: tech-scroll 44s linear infinite; }
     .tech-sequence { display: flex; flex: none; padding-inline-end: 9px; }
     .tech-badge { min-width: 104px; padding-inline: 11px; }
 }
-@keyframes bash-type { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
-@keyframes bash-output { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bash-type {
+    0%, 4% { clip-path: inset(0 100% 0 0); animation-timing-function: steps(13, end); }
+    21%, 98% { clip-path: inset(0); opacity: 1; }
+    100% { clip-path: inset(0); opacity: 0; }
+}
+@keyframes bash-output {
+    0%, 22% { opacity: 0; }
+    24%, 96% { opacity: 1; }
+    100% { opacity: 0; }
+}
 @keyframes bash-blink { 50% { opacity: 0; } }
 @keyframes tech-scroll { to { transform: translateX(-50%); } }
 @media (max-width: 480px) { .profile-points { grid-template-columns: 1fr; } }

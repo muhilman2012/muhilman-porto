@@ -3,7 +3,28 @@
 @section('content')
 <section class="hero-band">
     <div class="shell hero">
-        <div>
+        <div class="hero-copy">
+            <svg class="hero-stack-art" viewBox="0 0 840 115" fill="none" aria-hidden="true" focusable="false">
+                <defs>
+                    <linearGradient id="hero-stack-trace">
+                        <stop stop-color="#829dc4"/>
+                        <stop offset=".78" stop-color="#6489b9"/>
+                        <stop offset="1" stop-color="#6489b9" stop-opacity="0"/>
+                    </linearGradient>
+                </defs>
+                <g stroke="url(#hero-stack-trace)" stroke-width="1.4" opacity=".58">
+                    <path d="M59 74h37l31-31h29 M218 43h60l36 36h42 M426 79h51l35-35h46 M634 44h62l43 43h93"/>
+                    <path d="M236 50h32l40 40h34 M659 51h32l43 43h67" stroke-dasharray="3 5"/>
+                </g>
+                <g fill="#8ba7c8">
+                    <circle cx="59" cy="74" r="2.5"/><circle cx="156" cy="43" r="2.5"/>
+                    <circle cx="356" cy="79" r="2.5"/><circle cx="558" cy="44" r="2.5"/>
+                </g>
+                <image href="/assets/tech/php.svg" x="1" y="47" width="52" height="52"/>
+                <image href="/assets/tech/laravel.svg" x="167" y="17" width="45" height="49"/>
+                <image href="/assets/tech/mysql.svg" x="364" y="52" width="54" height="52"/>
+                <image href="/assets/tech/docker.svg" x="568" y="13" width="60" height="58"/>
+            </svg>
             <h1>Pembuatan Website &amp; Konsultasi Teknis</h1>
             <p class="lead">Saya membantu membangun dan mengembangkan website, mengintegrasikan layanan, serta menelusuri kendala aplikasi dan server.</p>
             <div class="actions">
